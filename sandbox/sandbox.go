@@ -7,15 +7,15 @@ func Fibonacci(x int) int {
 	return Fibonacci(x-1) + Fibonacci(x-2)
 }
 
-func TowerOfHanoi(height int, from_pole *[]int, to_pole *[]int, with_pole *[]int) {
+func TowerOfHanoi(height int, fromPole *[]int, toPole *[]int, withPole *[]int) {
 	if height >= 1 {
-		TowerOfHanoi(height-1, from_pole, with_pole, to_pole)
+		TowerOfHanoi(height-1, fromPole, withPole, toPole)
 
-		pop := (*from_pole)[(len(*from_pole) - 1)]
-		*from_pole = (*from_pole)[:len(*from_pole)-1]
-		*to_pole = append(*to_pole, pop)
+		pop := (*fromPole)[(len(*fromPole) - 1)]
+		*fromPole = (*fromPole)[:len(*fromPole)-1]
+		*toPole = append(*toPole, pop)
 
-		TowerOfHanoi(height-1, with_pole, to_pole, from_pole)
+		TowerOfHanoi(height-1, withPole, toPole, fromPole)
 	}
 
 }
