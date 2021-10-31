@@ -14,3 +14,16 @@ func SelectionSort(inputArray []int) []int {
 	}
 	return inputArray
 }
+
+func BubbleSort(inputArray []int) []int {
+	for x := 0; x < len(inputArray)-1; x++ {
+		for y := 0; y < len(inputArray)-x-1; y++ {
+			if inputArray[y] > inputArray[y+1] {
+				temp := inputArray[y]
+				inputArray[y] = inputArray[y+1]
+				inputArray[y+1] = temp
+			}
+		}
+	}
+	return inputArray
+}
