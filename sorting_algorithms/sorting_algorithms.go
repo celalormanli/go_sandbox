@@ -27,3 +27,21 @@ func BubbleSort(inputArray []int) []int {
 	}
 	return inputArray
 }
+
+func RecursiveBubbleSort(inputArray []int, counter int) []int {
+	if counter == -1 {
+		counter = len(inputArray)
+	}
+	if counter == 1 {
+		return inputArray
+	}
+	for x := 0; x < counter-1; x++ {
+		if inputArray[x] > inputArray[x+1] {
+			temp := inputArray[x]
+			inputArray[x] = inputArray[x+1]
+			inputArray[x+1] = temp
+		}
+	}
+	RecursiveBubbleSort(inputArray, counter-1)
+	return inputArray
+}
