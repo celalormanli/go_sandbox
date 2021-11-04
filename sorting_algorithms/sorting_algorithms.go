@@ -45,3 +45,16 @@ func RecursiveBubbleSort(inputArray []int, counter int) []int {
 	RecursiveBubbleSort(inputArray, counter-1)
 	return inputArray
 }
+
+func InsertionSort(inputArray []int) []int {
+	for x := 1; x < len(inputArray); x++ {
+		key := inputArray[x]
+		y := x - 1
+		for y >= 0 && key < inputArray[y] {
+			inputArray[y+1] = inputArray[y]
+			y = y - 1
+		}
+		inputArray[y+1] = key
+	}
+	return inputArray
+}

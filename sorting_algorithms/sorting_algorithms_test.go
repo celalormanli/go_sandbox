@@ -22,3 +22,9 @@ func TestRecursiveBubbleSort(t *testing.T) {
 		t.Errorf("Result should be {1, 8, 10, 48}")
 	}
 }
+
+func TestInsertionSort(t *testing.T) {
+	if !reflect.DeepEqual(InsertionSort([]int{10, 8, 48, 1}), []int{1, 8, 10, 48}) {
+		t.Errorf("Result should be {1, 8, 10, 48}")
+	}
+}
